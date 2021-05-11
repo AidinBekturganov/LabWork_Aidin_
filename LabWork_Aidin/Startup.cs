@@ -18,6 +18,8 @@ using LabWork_Aidin.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using LabWork_Aidin.Models;
+using Microsoft.Extensions.Logging;
+using LabWork_Aidin.Extensions;
 
 namespace LabWork_Aidin
 {
@@ -67,8 +69,11 @@ namespace LabWork_Aidin
                             IWebHostEnvironment env,
                             ApplicationDbContext context,
                             UserManager<ApplicationUser> userManager,
-                            RoleManager<IdentityRole> roleManager)
+                            RoleManager<IdentityRole> roleManager,
+                            ILoggerFactory logger)
         {
+            logger.AddFile("Logs/log-{Date}.txt");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -86,6 +91,7 @@ namespace LabWork_Aidin
             app.UseRouting();
             app.UseAuthentication();
             app.UseSession();
+            app.UseFileLogging();
 
             app.UseAuthentication();
             app.UseAuthorization();

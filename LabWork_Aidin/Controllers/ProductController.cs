@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LabWork_Aidin.DAL.Data;
+using Microsoft.Extensions.Logging;
 
 namespace LabWork_Aidin.Controllers
 {
@@ -16,6 +17,7 @@ namespace LabWork_Aidin.Controllers
         int _pageSize;
 
         public ProductController(ApplicationDbContext context)
+
         {
             _pageSize = 3;
             _context = context;

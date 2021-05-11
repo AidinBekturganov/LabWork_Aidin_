@@ -21,6 +21,12 @@ namespace LabWork_Aidin
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            .ConfigureLogging(lp =>
+            {
+                lp.ClearProviders();
+                lp.AddFilter("Microsoft", LogLevel.None);
+
+            });
     }
 }
