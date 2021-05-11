@@ -16,6 +16,6 @@ namespace LabWork_Aidin.DAL.Entities
         /// группа блюд (например, супы, напитки и т.д.)
         /// </summary>
         public int DishGroupId { get; set; }
-        public DishGroup Group { get; set; }
+        public DishGroup DishGroup { get; set; }
     }
 }

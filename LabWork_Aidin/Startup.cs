@@ -15,6 +15,9 @@ using LabWork_Aidin.DAL.Data;
 using LabWork_Aidin.DAL.Entities;
 using Microsoft.AspNetCore.Identity;
 using LabWork_Aidin.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using LabWork_Aidin.Models;
 
 namespace LabWork_Aidin
 {
@@ -37,7 +40,15 @@ namespace LabWork_Aidin
                  .AddEntityFrameworkStores<ApplicationDbContext>();*/
             services.AddControllersWithViews();
             services.AddRazorPages();
-
+            services.AddDistributedMemoryCache();
+            services.AddSession(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+            });
+            services.AddScoped<Cart>(sp => CartService.GetCart(sp));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -73,6 +84,8 @@ namespace LabWork_Aidin
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseSession();
 
             app.UseAuthentication();
             app.UseAuthorization();

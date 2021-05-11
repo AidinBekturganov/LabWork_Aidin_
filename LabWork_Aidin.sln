@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabWork_Aidin", "LabWork_Aidin\LabWork_Aidin.csproj", "{C8B3F5EB-3BD3-4A22-ADD1-FDB19F2B7365}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork_Aidin.DAL", "LabWork_Aidin.DAL\LabWork_Aidin.DAL.csproj", "{5BB0EF01-83A7-4F38-BCCC-058E555570A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabWork_Aidin.DAL", "LabWork_Aidin.DAL\LabWork_Aidin.DAL.csproj", "{5BB0EF01-83A7-4F38-BCCC-058E555570A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork_Aidin.Tests", "LabWork_Aidin.Tests\LabWork_Aidin.Tests.csproj", "{89F20212-6E1E-436C-9155-1266FA9F46A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5BB0EF01-83A7-4F38-BCCC-058E555570A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BB0EF01-83A7-4F38-BCCC-058E555570A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BB0EF01-83A7-4F38-BCCC-058E555570A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F20212-6E1E-436C-9155-1266FA9F46A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F20212-6E1E-436C-9155-1266FA9F46A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F20212-6E1E-436C-9155-1266FA9F46A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F20212-6E1E-436C-9155-1266FA9F46A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
